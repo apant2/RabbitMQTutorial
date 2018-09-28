@@ -13,7 +13,7 @@ channel.exchange_declare(exchange='logs',exchange_type='fanout')
 result = channel.queue_declare(exclusive=True)
 queue_name = result.method.queue
 
-#Bind the queue to the exchange (i.e. tell exchange to start send messages to our queue)
+#Bind the queue to the exchange (i.e. tell exchange to start sending messages to our queue)
 channel.queue_bind(exchange='logs', queue=queue_name)
 
 print(' [*] Waiting for logs. To exit press CTRL+C')
